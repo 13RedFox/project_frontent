@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home } from './components';
-import { Login } from './components/Auth/Login';
-import { PrivateRoute } from './utils/router';
+import { Login } from 'components/Auth';
+import { Home } from 'components';
+import { PrivateRoute } from 'utils/router';
 
 export const App = () => {
   return (
