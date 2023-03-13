@@ -1,8 +1,13 @@
 import { Button, TextField, Typography } from '@mui/material';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import style from './Login.module.scss';
 
-export const Login: FC = () => {
+interface LoginProps {
+  setEmail: Dispatch<SetStateAction<string>>;
+  setPassword: Dispatch<SetStateAction<string>>;
+}
+
+export const Login: FC<LoginProps> = ({ setEmail, setPassword }) => {
   return (
     <>
       <Typography
@@ -17,6 +22,7 @@ export const Login: FC = () => {
         placeholder='Введите ваш email'
         fullWidth
         sx={{ marginBottom: 2 }}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <TextField
         type='password'
@@ -25,8 +31,10 @@ export const Login: FC = () => {
         placeholder='Введите ваш пароль'
         fullWidth
         sx={{ marginBottom: 2 }}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <Button
+        type='submit'
         variant='contained'
         sx={{ fontFamily: 'Popins', marginBottom: 2, width: '30%' }}
       >
