@@ -1,6 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
-import { Login } from 'components/Auth';
 import { Home } from 'components';
+import { AuthRootComponent } from 'components/Auth';
+import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from 'utils/router';
 
 export const App = () => {
@@ -15,7 +15,11 @@ export const App = () => {
         </Route>
         <Route
           path='login'
-          element={<Login />}
+          element={<AuthRootComponent />}
+        />
+        <Route
+          path='register'
+          element={<AuthRootComponent />}
         />
       </Routes>
     </div>
